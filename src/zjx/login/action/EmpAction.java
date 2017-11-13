@@ -27,7 +27,7 @@ public class EmpAction {
 		this.empService = empService;
 	}
 	/**
-	 * 注册员工
+	 * 登录方法
 	 */
 	@RequestMapping(value="/login")
 	public String login(Emp emp, HttpServletRequest request) throws Exception{
@@ -43,6 +43,11 @@ public class EmpAction {
 			return "/login.jsp";
 		}
 	}
+	
+	/**
+	 * 笔记本方法
+	 */
+	
 	@RequestMapping(value="/bjb")
 	public String bjb(HttpServletRequest request){
 		Emp ee = (Emp) request.getAttribute("user");

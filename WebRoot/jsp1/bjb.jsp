@@ -38,10 +38,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	             		<td align = "center">${note.name1}</td>  
 	             		<td align = "center">${note.subject1}</td>  
 	             		<td align = "center">
-	         				<a href="">查询</a>
-	         				<a href="">创建</a>
-	         				<a href="">修改</a>
-	         				<a href="">删除</a>
+	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">查询</a>
+	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">创建</a>
+	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">修改</a>
+	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">删除</a>
 	         			</td>  
 	         		</tr>
 	         		  

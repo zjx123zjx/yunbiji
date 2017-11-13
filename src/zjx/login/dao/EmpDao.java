@@ -19,7 +19,9 @@ public class EmpDao {
 	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
 		this.sqlSessionFactory = sqlSessionFactory;
 	}
-	
+	/**
+	 * 登录方法
+	 */
 	public Emp login(Emp emp) {
 		// TODO Auto-generated method stub
 //		System.out.println("之前"+emp.getName()+emp.getPassword());
@@ -29,7 +31,9 @@ public class EmpDao {
 //		System.out.println("daodaoll");
 //		System.out.println("之后"+emp.getName()+emp.getPassword());
 	}
-
+	/**
+	 * 通过用户名找笔记本中的科目方法
+	 */
 	public List<Note> findAllSubjects(Emp ee) {
 		// TODO Auto-generated method stub
 		SqlSession sqlSession = sqlSessionFactory.openSession();
