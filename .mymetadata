@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="spring-mybatis-mysql"
+  id="myeclipse.1431539133861"
+  context-root="/spring-mybatis-mysql"
+  j2ee-spec="5.0"
+  archive="spring-mybatis-mysql.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
