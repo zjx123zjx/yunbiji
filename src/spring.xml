@@ -103,12 +103,12 @@
 	  <!-- 通知springioc容器这些注解的作用 -->
       <context:annotation-config/>
       
-      <!-- 视图解析器 -->
+      <!-- 视图解析器 
       <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
       		<property name="prefix" value="/jsp/"/>
       		<property name="suffix" value=".jsp"/>
       </bean>
-      
+      -->
       
 </beans>      
       

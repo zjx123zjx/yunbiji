@@ -2,9 +2,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>员工注册</title>
+    <title>主界面</title>
   </head>
   <body>
-	注册成功<br/>
+	<h1>欢迎你：${user.name}</h1><br/>
   </body>
 </html>

@@ -12,17 +12,19 @@ import zjx.login.entity.Emp;
  */
 public class EmpDao {
 	private SqlSessionFactory sqlSessionFactory;
+	private Emp user;
 	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
 		this.sqlSessionFactory = sqlSessionFactory;
 	}
 	
-	public void login(Emp emp) {
+	public Emp login(Emp emp) {
 		// TODO Auto-generated method stub
-		System.out.println("之前"+emp.getName()+emp.getPassword());
+//		System.out.println("之前"+emp.getName()+emp.getPassword());
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		emp = sqlSession.selectOne("empNamespace.login",emp);
-		System.out.println("daodaoll");
-		System.out.println("之后"+emp.getName()+emp.getPassword());
+		user = sqlSession.selectOne("empNamespace.login",emp);
+		return user;
+//		System.out.println("daodaoll");
+//		System.out.println("之后"+emp.getName()+emp.getPassword());
 	}
 	
 }
