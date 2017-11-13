@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="noteNamespace">
+	
+	<resultMap type="zjx.login.entity.Note" id="noteMap">
+	    <id property="id1" column="id"/>
+		<result property="name1" column="name"/>
+		<result property="subject1" column="subject"/>
+	</resultMap>	
+	
+	<!-- 登录模块 -->
+	<select id="findAllByName" parameterType="zjx.login.entity.Emp" resultType="zjx.login.entity.Note">
+		select id as id1,name as name1, subject as subject1 from notes where name = #{name}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+

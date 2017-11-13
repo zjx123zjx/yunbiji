@@ -1,9 +1,12 @@
 package zjx.login.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import zjx.login.entity.Emp;
+import zjx.login.entity.Note;
 
 /**
  * ³Ö¾Ã²ã
@@ -25,6 +28,14 @@ public class EmpDao {
 		return user;
 //		System.out.println("daodaoll");
 //		System.out.println("Ö®ºó"+emp.getName()+emp.getPassword());
+	}
+
+	public List<Note> findAllSubjects(Emp ee) {
+		// TODO Auto-generated method stub
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<Note> list = sqlSession.selectList("noteNamespace.findAllByName",ee);
+		//System.out.println((list == null)+"pppppppppp");
+		return list;
 	}
 	
 }

@@ -1,9 +1,13 @@
 package zjx.login.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import zjx.login.dao.EmpDao;
 import zjx.login.entity.Emp;
+import zjx.login.entity.Note;
 
 
 /**
@@ -31,6 +35,22 @@ public class EmpService {
 			}
 			request.setAttribute("error", "此用户名对应的密码不正确");
 			return false;
+		}
+	}
+
+	public void findAllSubjects(Emp ee, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		List<Note> list = empDao.findAllSubjects(ee);
+		if(list.size() > 0){
+			request.setAttribute("notesList", list);
+			//System.out.println(list.size());
+			return ;
+		}else{
+			//System.out.println("++++++++++++++");
+			List<Note> l = new ArrayList<Note>(); 
+			request.setAttribute("notesList", l);
+			//System.out.println(list.size());
+			return ;
 		}
 	}
 }
