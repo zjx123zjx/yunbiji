@@ -23,6 +23,13 @@
 	    delete from notes where name = #{name1} and subject = #{subject1}
  	</delete>
 	
+	<select id="findId" parameterType="zjx.login.entity.Note" resultType="zjx.login.entity.Note">
+		select id as id1 from notes where name = #{name1} and subject = #{subject1} 
+	</select>
+	
+	<update id="delete1" parameterType="zjx.login.entity.Note">
+		update notes set subject = #{subject1} where id = #{id1} 
+	</update>
 	
 </mapper>
 

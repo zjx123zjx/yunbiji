@@ -77,6 +77,12 @@ public class EmpService {
 		//System.out.println(userName+"=userName");
 		boolean b = empDao.create(createName,userName);
 	}
+	/**
+	 * 删除记事本
+	 * @param sub
+	 * @param session
+	 * @return
+	 */
 	public boolean del(String sub, HttpSession session) {
 		// TODO Auto-generated method stub
 		Note note = new Note();
@@ -85,6 +91,22 @@ public class EmpService {
 		note.setSubject1(sub);
 		boolean b = empDao.del(note);
 		return b;
+	}
+	/**
+	 * 更新笔记本
+	 * @param updateSub
+	 * @param session
+	 */
+	public void update(String updateSub, HttpSession session) {
+		// TODO Auto-generated method stub
+		Note note = new Note();
+		//获取原来的数据
+		String oldSub = (String)session.getAttribute("upSub");
+		//获取用户名
+		String name = ((Emp)(session.getAttribute("user"))).getName();
+		note.setName1(name);
+		note.setSubject1(oldSub);
+		empDao.update(note,updateSub);
 	}
 }
 

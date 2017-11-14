@@ -59,6 +59,11 @@ public class EmpDao {
 		sqlSession.close();
 		return false;
 	}
+	/**
+	 * 删除记事本
+	 * @param note
+	 * @return
+	 */
 	public boolean del(Note note) {
 		// TODO Auto-generated method stub
 		SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -73,6 +78,23 @@ public class EmpDao {
 			System.out.println(" 失败"+"aaaaa");
 			return false;
 		}
+	}
+	/**
+	 * 更新笔记本
+	 * @param note 存放用户名和原来的科目
+	 * @param updateSub 新的科目
+	 */
+	public void update(Note note, String updateSub) {
+		// TODO Auto-generated method stub
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		Note note1 = sqlSession.selectOne("noteNamespace.findId", note);
+        //System.out.println(note.getId1()+"ppppppp");
+		//根据用户名和原来的科目查询id
+		note.setId1(note1.getId1());
+		note.setSubject1(updateSub);
+		//根据id更新
+		sqlSession.update("noteNamespace.delete1", note);
+		//System.out.println(count);
 	}
 	
 }

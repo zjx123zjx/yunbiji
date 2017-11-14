@@ -36,11 +36,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    				
    				<c:forEach items="${notesList}" var="note">  
 	                <tr>   
-	             		<td align = "center">${note.name1}</td>  
+	             		<td align = "center" width="20%">${note.name1}</td>  
 	             		<td align = "center">${note.subject1}</td>  
 	             		<td align = "center">
 	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">查询</a>
-	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">修改</a>
+	         				<a href="${pageContext.request.contextPath}/jsp1/update.jsp?sub=${note.subject1}">修改</a>
 	         				<a href="${pageContext.request.contextPath}/emp/del.action?sub=${note.subject1}">删除</a>
 	         			</td>  
 	         		</tr>

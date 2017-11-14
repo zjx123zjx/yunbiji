@@ -74,6 +74,12 @@ public class EmpAction {
 		empService.create(session,createName);
 		return "/emp/bjb.action";
 	}
+	/**
+	 * 删除记事本
+	 * @param request
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping(value="/del")
 	public String del(HttpServletRequest request,HttpSession session){
 		System.out.println("===========++");
@@ -88,8 +94,19 @@ public class EmpAction {
 		System.out.println("true");
 		return "/emp/bjb.action";
 	}
-	
-	
+	/**
+	 * 更新笔记本
+	 * @param session
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/update")
+	public String update(HttpSession session,HttpServletRequest request){
+		//获得输入
+		String updateSub = (String)request.getParameter("updateSub");
+		empService.update(updateSub,session);
+		return "/emp/bjb.action";
+	}
 	
 }
 
