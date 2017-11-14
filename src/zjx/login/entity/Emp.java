@@ -1,10 +1,12 @@
 package zjx.login.entity;
 
+import java.io.Serializable;
+
 /**
  * Ô±¹¤
  * @author AdminTC
  */
-public class Emp {
+public class Emp implements Serializable{
 	private String name;
 	private String password;
 	public String getName() {

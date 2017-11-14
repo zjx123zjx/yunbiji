@@ -1,6 +1,8 @@
 package zjx.login.entity;
 
-public class Note {
+import java.io.Serializable;
+
+public class Note implements Serializable{
 	private int id1;
 	private String name1;
 	private String subject1;

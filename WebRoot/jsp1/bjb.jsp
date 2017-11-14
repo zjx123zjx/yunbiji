@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	             		<td align = "center">
 	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">查询</a>
 	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">修改</a>
-	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">删除</a>
+	         				<a href="${pageContext.request.contextPath}/emp/del.action?sub=${note.subject1}">删除</a>
 	         			</td>  
 	         		</tr>
 	         		  

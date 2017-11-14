@@ -56,8 +56,13 @@ public class EmpAction {
 		empService.findAllSubjects(ee,session);
 		return "/jsp1/bjb.jsp";
 	}
+	/*
+	 * 新建笔记本
+	 */
+	
 	@RequestMapping(value="/create")
 	public String create(HttpServletRequest request,HttpSession session){
+		//接收数据及转码
 		String createName = request.getParameter("createName");
 		try {
 			createName = new String(createName.getBytes("ISO-8859-1"),"UTF-8");
@@ -69,6 +74,22 @@ public class EmpAction {
 		empService.create(session,createName);
 		return "/emp/bjb.action";
 	}
+	@RequestMapping(value="/del")
+	public String del(HttpServletRequest request,HttpSession session){
+		System.out.println("===========++");
+		String sub = (String) request.getParameter("sub");
+		try {
+			sub = new String(sub.getBytes("ISO-8859-1"),"utf-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		empService.del(sub,session);
+		System.out.println("true");
+		return "/emp/bjb.action";
+	}
+	
+	
 	
 }
 

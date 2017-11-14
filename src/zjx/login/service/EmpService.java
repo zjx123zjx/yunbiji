@@ -63,6 +63,11 @@ public class EmpService {
 			return ;
 		}
 	}
+	/**
+	 * 新建笔记本方法
+	 * @param session
+	 * @param createName（学科名）
+	 */
 	public void create(HttpSession session, String createName) {
 		// TODO Auto-generated method stub
 		//System.out.println("========");
@@ -71,6 +76,15 @@ public class EmpService {
 		String userName = eee.getName();
 		//System.out.println(userName+"=userName");
 		boolean b = empDao.create(createName,userName);
+	}
+	public boolean del(String sub, HttpSession session) {
+		// TODO Auto-generated method stub
+		Note note = new Note();
+		String name = ((Emp)(session.getAttribute("user"))).getName();
+		note.setName1(name);
+		note.setSubject1(sub);
+		boolean b = empDao.del(note);
+		return b;
 	}
 }
 

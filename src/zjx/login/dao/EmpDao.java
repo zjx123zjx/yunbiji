@@ -44,6 +44,9 @@ public class EmpDao {
 		sqlSession.close();
 		return list;
 	}
+	/*
+	 * 新建笔记本
+	 */
 	public boolean create(String createName, String userName) {
 		// TODO Auto-generated method stub
 		//System.out.println(createName+userName+"[[[[[[[[[[");
@@ -55,6 +58,21 @@ public class EmpDao {
 //		System.out.println("success!");
 		sqlSession.close();
 		return false;
+	}
+	public boolean del(Note note) {
+		// TODO Auto-generated method stub
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		
+		System.out.print("删除的学科："+ note.getSubject1());
+		int count = sqlSession.delete("noteNamespace.del", note);
+		sqlSession.close();
+		if(count == 1){
+			System.out.println(" 成功"+"aaaaa");
+			return true;
+		}else{
+			System.out.println(" 失败"+"aaaaa");
+			return false;
+		}
 	}
 	
 }

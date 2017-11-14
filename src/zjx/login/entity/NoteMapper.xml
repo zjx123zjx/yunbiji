@@ -19,6 +19,10 @@
 		insert into notes(subject,name) values(#{subject1},#{name1})
 	</insert>
 	
+	<delete id="del" parameterType="zjx.login.entity.Note">
+	    delete from notes where name = #{name1} and subject = #{subject1}
+ 	</delete>
+	
 	
 </mapper>
 
