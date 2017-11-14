@@ -10,10 +10,15 @@
 		<result property="subject1" column="subject"/>
 	</resultMap>	
 	
-	<!-- 登录模块 -->
+	<!-- 根据名字查询左右 -->
 	<select id="findAllByName" parameterType="zjx.login.entity.Emp" resultType="zjx.login.entity.Note">
 		select id as id1,name as name1, subject as subject1 from notes where name = #{name}
 	</select>
+	
+	<insert id="create" parameterType="zjx.login.entity.Note">
+		insert into notes(subject,name) values(#{subject1},#{name1})
+	</insert>
+	
 	
 </mapper>
 

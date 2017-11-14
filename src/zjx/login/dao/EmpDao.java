@@ -1,5 +1,6 @@
 package zjx.login.dao;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -27,6 +28,7 @@ public class EmpDao {
 //		System.out.println("之前"+emp.getName()+emp.getPassword());
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		user = sqlSession.selectOne("empNamespace.login",emp);
+		sqlSession.close();
 		return user;
 //		System.out.println("daodaoll");
 //		System.out.println("之后"+emp.getName()+emp.getPassword());
@@ -39,7 +41,20 @@ public class EmpDao {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		List<Note> list = sqlSession.selectList("noteNamespace.findAllByName",ee);
 		//System.out.println((list == null)+"pppppppppp");
+		sqlSession.close();
 		return list;
+	}
+	public boolean create(String createName, String userName) {
+		// TODO Auto-generated method stub
+		//System.out.println(createName+userName+"[[[[[[[[[[");
+		Note n = new Note();
+		n.setName1(userName);
+		n.setSubject1(createName);
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		sqlSession.insert("noteNamespace.create",n);
+//		System.out.println("success!");
+		sqlSession.close();
+		return false;
 	}
 	
 }

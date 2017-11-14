@@ -25,6 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <h1>欢迎你：${user.name}</h1><br/>
+  		<center><a href="${pageContext.request.contextPath}/jsp1/create.jsp">创建</a></center>
    		<form action="" method="POST">
    			<table border="2" align="center">
    				<tr>
@@ -39,7 +40,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	             		<td align = "center">${note.subject1}</td>  
 	             		<td align = "center">
 	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">查询</a>
-	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">创建</a>
 	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">修改</a>
 	         				<a href="${pageContext.request.contextPath}/jsp1/main.jsp">删除</a>
 	         			</td>  
