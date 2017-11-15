@@ -119,7 +119,7 @@ public class EmpAction {
 		note.setName1(cxName);
 		note.setSubject1(cxSub);
 		boolean b = empService.findNoteById(note,session);
-		return "/jsp1/bj.jsp"; 
+		return "/jsp1/bj.jsp?foreign="+session.getAttribute("foreignKey"); 
 	}
 	
 	

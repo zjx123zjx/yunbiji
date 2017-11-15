@@ -24,19 +24,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <h1>笔记页面</h1><br/>
-  		<center><a href="${pageContext.request.contextPath}/jsp1/create.jsp">创建</a></center>
+  <h1>笔记页面</h1> ${foreignKey}<br/>
+  		<center><a href="${pageContext.request.contextPath}/jsp1/create.jsp">创建笔记</a></center>
    		<form action="" method="POST">
    			<table border="2" align="center">
    			       <th>笔记列表</th>
    				<tr>
-   					<th width="20%">明称</th>
+   					<th width="20%">名称</th>
+   					<th width="20%">id号</th>
    					<th width="60%">操作</th>
    				</tr>
    				
    				<c:forEach items="${bjlist}" var="note">  
 	                <tr>   
 	             		<td align = "center" width="20%">${note.name1}</td>  
+	             		<td align = "center" width="20%">${note.nid1}</td>  
 	             		<td align = "center">
 	         				<a href="${pageContext.request.contextPath}/emp/findNoteById.action">查询</a>
 	         				<a href="${pageContext.request.contextPath}/jsp1/update.jsp">修改</a>

@@ -113,6 +113,7 @@ public class EmpService {
 		// TODO Auto-generated method stub
 		List<Bj> list = empDao.findNoteById(note);
 		session.setAttribute("bjlist", list);
+		session.setAttribute("foreignKey", list.get(0).getNid1());
 		return true;
 	}
 }

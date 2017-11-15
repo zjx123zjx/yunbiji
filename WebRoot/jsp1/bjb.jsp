@@ -25,13 +25,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <h1>欢迎你：${user.name}</h1><br/>
-  		<center><a href="${pageContext.request.contextPath}/jsp1/create.jsp">创建</a></center>
+  		<center><a href="${pageContext.request.contextPath}/jsp1/create.jsp">创建笔记本</a></center>
    		<form action="" method="POST">
    			<table border="2" align="center">
-   			    <th colspan="2">笔记本列表</th>
+   			    <th colspan="3">笔记本列表</th>
    				<tr>
    					<th width="20%">姓名</th>
-   					<th width="20%">学科</th>
+   					<th width="20%">笔记本</th>
    					<th width="60%">操作</th>
    				</tr>
    				
