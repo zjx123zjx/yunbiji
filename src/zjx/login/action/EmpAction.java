@@ -99,14 +99,31 @@ public class EmpAction {
 	 * @param session
 	 * @param request
 	 * @return
+	 * @throws UnsupportedEncodingException 
 	 */
 	@RequestMapping(value="/update")
-	public String update(HttpSession session,HttpServletRequest request){
+	public String update(HttpSession session,HttpServletRequest request) throws UnsupportedEncodingException{
 		//ªÒµ√ ‰»Î
 		String updateSub = (String)request.getParameter("updateSub");
+		updateSub = new String(updateSub.getBytes("ISO-8859-1"),"utf-8");
 		empService.update(updateSub,session);
 		return "/emp/bjb.action";
 	}
+	@RequestMapping(value="/findNoteById")
+	public String findNoteById(HttpServletRequest request,HttpSession session) throws UnsupportedEncodingException{
+		String cxSub = request.getParameter("cxSub");
+		String cxName = request.getParameter("cxName");
+		cxSub = new String(cxSub.getBytes("ISO-8859-1"),"utf-8");
+		cxName = new String(cxName.getBytes("ISO-8859-1"),"utf-8");
+		Note note = new Note();
+		note.setName1(cxName);
+		note.setSubject1(cxSub);
+		boolean b = empService.findNoteById(note,session);
+		return "/jsp1/bj.jsp"; 
+	}
+	
+	
+	
 	
 }
 

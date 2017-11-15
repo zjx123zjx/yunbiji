@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import zjx.login.dao.EmpDao;
+import zjx.login.entity.Bj;
 import zjx.login.entity.Emp;
 import zjx.login.entity.Note;
 
@@ -107,6 +108,12 @@ public class EmpService {
 		note.setName1(name);
 		note.setSubject1(oldSub);
 		empDao.update(note,updateSub);
+	}
+	public boolean findNoteById(Note note, HttpSession session) {
+		// TODO Auto-generated method stub
+		List<Bj> list = empDao.findNoteById(note);
+		session.setAttribute("bjlist", list);
+		return true;
 	}
 }
 

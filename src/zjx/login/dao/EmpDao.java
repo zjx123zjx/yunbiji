@@ -1,11 +1,13 @@
 package zjx.login.dao;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import zjx.login.entity.Bj;
 import zjx.login.entity.Emp;
 import zjx.login.entity.Note;
 
@@ -88,13 +90,29 @@ public class EmpDao {
 		// TODO Auto-generated method stub
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		Note note1 = sqlSession.selectOne("noteNamespace.findId", note);
-        //System.out.println(note.getId1()+"ppppppp");
+		System.out.println(note.getName1()+note.getSubject1()+"原来");
+		System.out.println("新的为空？");
+        System.out.println(note1.getId1()+"ppppppp");
 		//根据用户名和原来的科目查询id
 		note.setId1(note1.getId1());
 		note.setSubject1(updateSub);
 		//根据id更新
 		sqlSession.update("noteNamespace.delete1", note);
+		sqlSession.close();
 		//System.out.println(count);
+	}
+	public List<Bj> findNoteById(Note note) {
+		// TODO Auto-generated method stub
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		Note note1 = sqlSession.selectOne("noteNamespace.findId", note);
+		System.out.println(note.getName1() + note.getSubject1());
+		System.out.println(note1.getId1());
+		Bj bj = new Bj();
+		List<Bj> list = new ArrayList<Bj>();
+		bj.setNid1(note1.getId1());
+		list = sqlSession.selectList("noteNamespace.findBj", bj);
+		sqlSession.close();
+		return list;
 	}
 	
 }

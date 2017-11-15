@@ -26,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<%
   	
   		String str = (String)request.getParameter("sub");
+  		str = new String(str.getBytes("iso-8859-1"),"utf-8");
   		session.setAttribute("upSub", str);
   	 %>
     <form action="${pageContext.request.contextPath}/emp/update.action">

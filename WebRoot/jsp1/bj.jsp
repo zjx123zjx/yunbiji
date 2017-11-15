@@ -24,25 +24,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <h1>欢迎你：${user.name}</h1><br/>
+  <h1>笔记页面</h1><br/>
   		<center><a href="${pageContext.request.contextPath}/jsp1/create.jsp">创建</a></center>
    		<form action="" method="POST">
    			<table border="2" align="center">
-   			    <th colspan="2">笔记本列表</th>
+   			       <th>笔记列表</th>
    				<tr>
-   					<th width="20%">姓名</th>
-   					<th width="20%">学科</th>
+   					<th width="20%">明称</th>
    					<th width="60%">操作</th>
    				</tr>
    				
-   				<c:forEach items="${notesList}" var="note">  
+   				<c:forEach items="${bjlist}" var="note">  
 	                <tr>   
 	             		<td align = "center" width="20%">${note.name1}</td>  
-	             		<td align = "center">${note.subject1}</td>  
 	             		<td align = "center">
-	         				<a href="${pageContext.request.contextPath}/emp/findNoteById.action?cxSub=${note.subject1}&cxName=${note.name1}">查询</a>
-	         				<a href="${pageContext.request.contextPath}/jsp1/update.jsp?sub=${note.subject1}">修改</a>
-	         				<a href="${pageContext.request.contextPath}/emp/del.action?sub=${note.subject1}">删除</a>
+	         				<a href="${pageContext.request.contextPath}/emp/findNoteById.action">查询</a>
+	         				<a href="${pageContext.request.contextPath}/jsp1/update.jsp">修改</a>
+	         				<a href="${pageContext.request.contextPath}/emp/del.action">删除</a>
 	         			</td>  
 	         		</tr>
 	         		  

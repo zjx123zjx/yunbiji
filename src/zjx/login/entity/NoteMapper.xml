@@ -31,6 +31,10 @@
 		update notes set subject = #{subject1} where id = #{id1} 
 	</update>
 	
+	<select id="findBj" parameterType="zjx.login.entity.Bj" resultType="zjx.login.entity.Bj">
+		select id as id1,name as name1, nid as nid1, content as content1 from note where nid = #{nid1}
+	</select>
+	
 </mapper>
 
 
