@@ -107,8 +107,8 @@ public class EmpDao {
 		// TODO Auto-generated method stub
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		Note note1 = sqlSession.selectOne("noteNamespace.findId", note);
-		System.out.println(note.getName1() + note.getSubject1());
-		System.out.println(note1.getId1());
+//		System.out.println(note.getName1() + note.getSubject1());
+//		System.out.println(note1.getId1());
 		Bj bj = new Bj();
 		List<Bj> list = new ArrayList<Bj>();
 		bj.setNid1(note1.getId1());

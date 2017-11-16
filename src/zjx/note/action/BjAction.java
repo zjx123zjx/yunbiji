@@ -35,5 +35,12 @@ public class BjAction {
 		bjService.create(createBjName,neirong,session);
 		return "/emp/bjb.action";
 	}
+	@RequestMapping(value="/del")
+	public String del(HttpServletRequest request){
+		String hidd = request.getParameter("hidd");
+		int id = Integer.parseInt(hidd);
+		bjService.del(id);
+		return "/jsp1/bjb.jsp";
+	}
 	
 }

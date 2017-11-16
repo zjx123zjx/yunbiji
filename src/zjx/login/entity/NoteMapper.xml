@@ -39,7 +39,9 @@
 		insert into note(nid,name,content) values(#{nid1},#{name1},#{content1})
 	</insert>
 	
-	
+	<delete id="del1" parameterType="Integer">
+	    delete from note where id = #{idd}
+ 	</delete>
 	
 </mapper>
 

@@ -20,5 +20,9 @@ public class BjService {
 		bj.setContent1(neirong);
 		bjDao.create(bj);
 	}
+	public void del(int id) {
+		// TODO Auto-generated method stub
+		bjDao.del(id);
+	}
 
 }

@@ -17,7 +17,17 @@ public class BjDao {
 //		System.out.println(bj.getName1());	
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		int count = sqlSession.insert("noteNamespace.createBj", bj);
-		System.out.println(count);
+		//System.out.println(count);
+		sqlSession.close();
+	}
+
+
+	public void del(int idd) {
+		// TODO Auto-generated method stub
+		System.out.println(idd +"  id " );
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int count = sqlSession.delete("noteNamespace.del1",idd);
+		System.out.println("count == "+ count);
 		sqlSession.close();
 	}
 }
