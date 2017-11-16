@@ -111,9 +111,8 @@ public class EmpService {
 	}
 	public boolean findNoteById(Note note, HttpSession session) {
 		// TODO Auto-generated method stub
-		List<Bj> list = empDao.findNoteById(note);
+		List<Bj> list = empDao.findNoteById(note,session);
 		session.setAttribute("bjlist", list);
-		session.setAttribute("foreignKey", list.get(0).getNid1());
 		return true;
 	}
 }

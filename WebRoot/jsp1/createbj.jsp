@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'create.jsp' starting page</title>
+    <title>My JSP 'createbj.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,22 +21,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
-  
-  <body>
-    <form action="${pageContext.request.contextPath}/emp/create.action">
+ 
+   <body>
+   ${foreignKey}
+    <form action="${pageContext.request.contextPath}/bj/create.action">
     	<table>
     		<tr>
     			<td>
-    				笔记本名称：
+    				笔记名称：
     			</td>
     			
     			<td>
-    				<input type="text" name="createName" />
+    				<input type="text" name="createBjName" />
     			</td>
     		</tr>
+    		
+    		<tr>
+    			<td>
+    				笔记内容：
+    			</td>
+    			
+    			<td>
+    				<textarea rows="10" cols="100" name= "neirong"></textarea>
+    			</td>
+    		</tr>
+    		
+    		
     		<tr >
-    			<td colspan="2">
-    				<input type="submit" value="创建笔记本"/>
+    			<td colspan="2" align="center">
+    				<input type="submit" value="创建笔记"/>
     			</td>
     		
     		</tr>

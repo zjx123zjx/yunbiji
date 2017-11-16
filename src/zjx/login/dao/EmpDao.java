@@ -4,6 +4,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -101,7 +103,7 @@ public class EmpDao {
 		sqlSession.close();
 		//System.out.println(count);
 	}
-	public List<Bj> findNoteById(Note note) {
+	public List<Bj> findNoteById(Note note, HttpSession session) {
 		// TODO Auto-generated method stub
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		Note note1 = sqlSession.selectOne("noteNamespace.findId", note);
@@ -110,6 +112,7 @@ public class EmpDao {
 		Bj bj = new Bj();
 		List<Bj> list = new ArrayList<Bj>();
 		bj.setNid1(note1.getId1());
+		session.setAttribute("foreignKey", note1.getId1());
 		list = sqlSession.selectList("noteNamespace.findBj", bj);
 		sqlSession.close();
 		return list;

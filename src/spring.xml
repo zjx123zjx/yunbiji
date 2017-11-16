@@ -89,17 +89,27 @@
       		<property name="sqlSessionFactory" ref="sqlSessionFactoryBeanID"/>
       </bean>
       
+      <!-- 注册BjDao -->
+      <bean id="bjDaoID" class="zjx.note.dao.BjDao">
+      		<property name="sqlSessionFactory" ref="sqlSessionFactoryBeanID"></property>
+      </bean>
       
       <!-- 注册EmpService -->
       <bean id="empServiceID" class="zjx.login.service.EmpService">
       		<property name="empDao" ref="empDaoID"/>
       </bean>
       
+      <!-- 注册BjService -->
+      <bean id="bjServiceID" class="zjx.note.service.BjService">
+      		<property name="bjDao" ref="bjDaoID"/>
+      </bean>
       
       <!-- 注册EmpAction -->
       <context:component-scan base-package="zjx.login.action"/>
 
-
+      <!-- 注册BjAction -->
+      <context:component-scan base-package="zjx.note.action"/>
+      
 	  <!-- 通知springioc容器这些注解的作用 -->
       <context:annotation-config/>
       

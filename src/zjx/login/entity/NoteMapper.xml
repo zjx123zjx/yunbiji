@@ -35,6 +35,12 @@
 		select id as id1,name as name1, nid as nid1, content as content1 from note where nid = #{nid1}
 	</select>
 	
+	<insert id="createBj" parameterType="zjx.login.entity.Bj">
+		insert into note(nid,name,content) values(#{nid1},#{name1},#{content1})
+	</insert>
+	
+	
+	
 </mapper>
 
 
