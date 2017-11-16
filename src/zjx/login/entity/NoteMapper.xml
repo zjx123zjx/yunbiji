@@ -35,6 +35,12 @@
 		select id as id1,name as name1, nid as nid1, content as content1 from note where nid = #{nid1}
 	</select>
 	
+	<select id="selectContent" parameterType="Integer" resultType="String">
+		select content from note where id = #{id}
+	</select>
+	
+	
+	
 	<insert id="createBj" parameterType="zjx.login.entity.Bj">
 		insert into note(nid,name,content) values(#{nid1},#{name1},#{content1})
 	</insert>
@@ -42,6 +48,10 @@
 	<delete id="del1" parameterType="Integer">
 	    delete from note where id = #{idd}
  	</delete>
+	
+	<update id="save" parameterType="zjx.login.entity.Bj">
+		update note set content= #{content1} where id = #{id1} 
+	</update>
 	
 </mapper>
 

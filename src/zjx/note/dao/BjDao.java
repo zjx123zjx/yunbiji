@@ -30,4 +30,23 @@ public class BjDao {
 		System.out.println("count == "+ count);
 		sqlSession.close();
 	}
+
+
+	public String cxBj(int id) {
+		// TODO Auto-generated method stub
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		String str = sqlSession.selectOne("noteNamespace.selectContent",id);
+		//System.out.println(str);
+		sqlSession.close();
+		return str;
+	}
+
+
+	public void save(Bj bj) {
+		// TODO Auto-generated method stub
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int count = sqlSession.update("noteNamespace.save",bj);
+		System.out.println(count);
+		sqlSession.close();
+	}
 }

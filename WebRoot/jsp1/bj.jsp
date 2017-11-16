@@ -38,8 +38,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                <tr>   
 	             		<td align = "center" width="20%">${note.name1}</td>  
 	             		<td align = "center">
-	         				<a href="${pageContext.request.contextPath}/emp/findNoteById.action">查询</a>
-	         				<a href="${pageContext.request.contextPath}/jsp1/update.jsp">修改</a>
+	         				<a href="${pageContext.request.contextPath}/bj/cxBj.action?id=${note.id1}">查询</a>
+	         				<a href="${pageContext.request.contextPath}/bj/upBj.action?id=${note.id1}">修改</a>
 	         				<a href="${pageContext.request.contextPath}/bj/del.action?hidd=${note.id1}">删除</a>
 	         			</td>  
 	         		</tr>

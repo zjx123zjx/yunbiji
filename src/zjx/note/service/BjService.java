@@ -24,5 +24,14 @@ public class BjService {
 		// TODO Auto-generated method stub
 		bjDao.del(id);
 	}
+	public String cxBj(int id) {
+		// TODO Auto-generated method stub
+		String str = bjDao.cxBj(id);
+		return str;
+	}
+	public void save(Bj bj) {
+		// TODO Auto-generated method stub
+		bjDao.save(bj);
+	}
 
 }
